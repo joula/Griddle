@@ -288,7 +288,7 @@ var Griddle = React.createClass({
             var deepKeys = deep.keys(nextProps.results[0]);
 
             var is_same = (this.columnSettings.allColumns.length == deepKeys.length) && this.columnSettings.allColumns.every(function(element, index) {
-                return element === deepKeys[index]; 
+                return element === deepKeys[index];
             });
 
             if(!is_same) {
@@ -737,7 +737,7 @@ var Griddle = React.createClass({
     getNoDataSection: function(gridClassName, topSection){
         var myReturn = null;
         if (this.props.customNoDataComponent != null) {
-            myReturn = (<div className={gridClassName}><this.props.customNoDataComponent /></div>);
+            myReturn = (<div className={gridClassName}>{topSection}<this.props.customNoDataComponent /></div>);
 
             return myReturn
         }
